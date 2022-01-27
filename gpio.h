@@ -10,12 +10,22 @@ const int CHIP = 0;
 class Gpio : public QObject
 {
     Q_OBJECT
+
 public:
+
     explicit Gpio(QObject *parent = nullptr);
+    ~Gpio();
+
+    void set(int pin, bool value);
+    void set(unsigned int pattern);
 
 signals:
 
 public slots:
+private:
+
+    int m_handel;
 };
+
 
 #endif // GPIO_H
